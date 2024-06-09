@@ -1,38 +1,337 @@
-.App {
-  text-align: center;
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*::selection {
+    background-color: #664a8a63;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*::-moz-selection {
+    background: #664a8a63;
+}
+ 
+
+* {
+    -webkit-tap-highlight-color: transparent;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+:root{
+    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    cursor:default;
+    --primary--color: #664a8a;
+    --border--color: #dee2e6;
+    --black--color: #333;
+    --white--color: #fff3f3;
+}
+
+.wrapper_container{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+.wallpaper_container{
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 60%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background:linear-gradient(to right bottom, #9e73d6 10%,var(--primary--color)) ;
+}
+.wallpaper_container h1{
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--white--color);
+  letter-spacing: 0.5px;
+}
+.wallpaper_container h2{
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--white--color);
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+.wallpaper_container p{
+  margin-top: 10px;
+  font-size: 2.0rem;
+  color: #ddd;
+}
+.wallpaper_container p a{
+  text-decoration: underline;
+  color: #ddd;
+}
+.form-container {
+  width: 40%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 50px;
+}
+
+.form-container h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--black--color);
+  letter-spacing: 0.5px;
+}
+
+.form-container h3{
+  font-size: 2rem;
+  font-weight: 400;
+  color: gray;
+}
+form{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+.form-group{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.password_eye_wrapper{
+  position: relative;
+  width: 100%;
+}
+.password-toggle{
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  height: 40px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-left: 1px solid rgb(198, 198, 198);
+}
+.password-toggle svg{
+  width: 20px;
+}
+.password-toggle svg path{
+  fill: var(--black--color);
+}
+
+.form-group label{
+  font-size: 1.5rem;
+  font-weight: 400;
+  color:  var(--black--color);
+}
+.required{
+  color: red;
+}
+/* .css-1nmdiq5-menu,.css-1dimb5e-singleValue{
+  font-size: 1.55rem !important;
+}
+.css-1dimb5e-singleValue{
+  padding-left: 10px;
+} */
+.form-group input {
+  width: 100%;
+  height: 40px;
+  padding: 0;
+  padding-left: 10px;
+  border: 1px solid var(--border--color);
+  border-radius: 5px;
+  font-size: 1.55rem;
+}
+.form-control{
+  width: 100% !important;
+}
+.form-group input:focus{
+  outline: none;
+  border: 1px solid var(--primary--color);
+}
+.error-message{
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: red;
+}
+/* .css-qbdosj-Input{
+  padding: 0 !important;
+  margin: 0 !important;
+  padding-left: 10px !important;
+  font-size: 1.5rem !important;
+} 
+.css-qbdosj-Input:disabled{
+  padding: 0 !important;
+  margin: 0 !important;
+  padding-left: 10px !important;
+}
+.css-b62m3t-container:disabled{
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 35px !important;  
+  padding-left: 10px !important;
+}
+.css-3iigni-container, .css-16xfy0z-control, .css-1fdsijx-ValueContainer, .css-1h01tm3-Input{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.css-1jqq78o-placeholder{
+  padding-left: 10px !important;
+  font-size: 1.5rem !important;
+}
+.css-b62m3t-container{
+  height: 35px !important;  
+  margin-bottom: 10px !important;
+} */
+.submit_button{
+  width: 100%;
+  height: 40px;
+  background:linear-gradient(to right, #9e73d6,var(--primary--color)) ;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.custom-select{ 
+  font-size: 1.55rem !important;
+}
+.custom-select div{
+  padding: 0 !important;
+  padding-left: 5px !important;
+}
+.custom-select input{
+  height: 35px;
+}
+.custom-select .Select-control{
+  height: 35px !important;
+}
+
+
+
+/* Details page */
+/* DetailsComponent.css */
+.big_details_wrapper{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.details-container {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  background:linear-gradient(to right bottom, #9e73d6,var(--primary--color)) ;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.details-container h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.details-container p {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
+
+.details-container p:last-child {
+  margin-bottom: 0;
+}
+
+.details-container .no-data {
+  font-style: italic;
+  color: #999;
+}
+
+
+/*  */
+
+/* responsive code below*/
+@media screen and (max-width:1920px) {
+    html {
+        font-size: 60%;
+    }
+    
+}
+
+@media screen and (max-width:1200px) {
+    html {
+        font-size: 60%;
+    }
+    .wallpaper_container,.form-container{
+      width: 50%;
+    
+    }
+}
+
+@media screen and (max-width:998px) {
+    html {
+        font-size: 55%;
+    }
+    .wallpaper_container{
+      width: 0;
+      overflow: hidden;
+      display: none;
+    }
+    .form-container{
+      width: 100%;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    html {
+        font-size: 50%;
+    }
+ 
+}
+
+@media screen and (max-width:500px) {
+    html {
+        font-size: 45%;  
+    }
+
+}
+
+@media screen and (max-width:430px) {
+    html {
+        font-size: 43%;
+    }
+}
+
+@media screen and (max-width:375px) {
+    html {
+        font-size: 40%;
+    }
+}
+@media screen and (max-width:300px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+/* responsive code above */
+
